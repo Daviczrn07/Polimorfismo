@@ -1,0 +1,22 @@
+﻿using Heranca;
+
+namespace Polimorfismo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Animal> zoo = new List<Animal>
+            {
+            new Leao(),
+            new Macaco(),
+            new Cobra()
+            };
+
+            foreach (Animal a in zoo)
+            {
+                a.EmitirSom();
+            }
+        }
+    }
+}
