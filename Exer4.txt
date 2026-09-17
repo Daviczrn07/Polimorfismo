@@ -1,0 +1,29 @@
+﻿using Heranca;
+
+namespace Polimorfismo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<INotificacao> notificacoes = new List<INotificacao>
+        {
+            new NotificacaoEmail(),
+            new NotificacaoSms(),
+            new NotificacaoPush()
+        };
+
+            Console.WriteLine("--- POLIMORFISMO DE SOBRESCRITA ---");
+            foreach (INotificacao notificacao in notificacoes)
+            {
+                notificacao.Enviar();
+            }
+
+            Console.WriteLine("\n--- POLIMORFISMO DE SOBRECARGA ---");
+            NotificacaoEmail email = new NotificacaoEmail();
+            email.Enviar();
+            email.Enviar("relatorio.pdf");
+        }
+    }
+}
+
